@@ -1,0 +1,397 @@
+<!--README: To run this webpage locally on a drive:
+      1. Navigate to this project's directory in CMD - ../bee_portfolio
+      2. Run NPM Vite using the command $ npx vite
+      3. Then execute the open in browser argument within the Vite shell by typing 'O' in CMD
+      
+      You can now edit your webpage live and see the results in your corresponding browser!
+-->
+
+<!--=====================================================
+    Base HTML - Brendan Sting's bee portfolio website 
+    File: index.html
+    Made by: Brendan Sting
+    HTML skeleton provided by: Kunaal from Modern Web
+    Last revision date: 1-2-2024
+=========================================================-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brendan Sting</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="Icons/BeeSting_Logo_32x32.ico" />
+</head>
+<body>
+  <canvas class="overlay-darken WEBGL_BCKGRND"></canvas>
+
+  <!--The top-right navigation bar links on my web page-->
+  <header>
+    <nav>
+      <img src="Icons/BeeSting_Logo_WholeGradient.png" class="logo" alt="">
+
+
+      <ul class="links-container">
+        <li class="link-items"><a href="#frontPage-render" class="links">Home</a></li>
+        <li class="link-items"><a href="#project-section" class="links">Projects</a></li>
+        <li class="link-items"><a href="#about-section" class="links">About</a></li>
+        <li class="link-items"><a href="#contact-section" class="links">Contact</a></li>
+      </ul>
+
+      <!--Media Query-Driven Toggle Button-->
+      <div class="toggle-button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!--The front page or hero section of my website, with a giant 3D bee of course-->
+  <main id="frontPage-render">
+    <div class="scene">
+      <h2 class="frontPage-secondary-line">Hey, what's up!</h2>
+      <h1 class="frontPage-headline">I'm Brendan Sting.</h1>
+      <h3 class="frontPage-third-line">Welcome to my portfolio!</h3>
+    </div>
+  </main>
+
+  <!--The Project section of my portfolio website-->
+  <section id="project-section">
+
+    <h1 class="section-title" faded-text="buzzing">Projects</h1>
+    <p class="section-info">Ah, so you want to check out a bit of my works, huh? Well, here's a few projects I've worked on and perhaps still working on! Busy as a bee!</p>
+    
+    <!--The row of filter buttons under the Project section of my web page-->
+    <div class="filter">
+      <button class="filter-button selected" filter-value="All">All</button>
+      <button class="filter-button" filter-value="Front-end/UI">Front-end/UI</button>
+      <button class="filter-button" filter-value="Game Development">Game Development</button>
+      <button class="filter-button" filter-value="Game Design">Game Design</button>
+      <button class="filter-button" filter-value="Graphics Programming">Graphics Programming</button>
+      <button class="filter-button" filter-value="Customized/Enterprise Software Development">Customized/Enterprise Software Development</button>
+    </div>
+
+    <!--The gallery of projects under the Project section of my web page-->
+    <div class="project-gallery">
+    </div>
+
+    <!--Expanded Project Details: Template-like setup-->
+    <div id="project-info"> <!--Using ID instead of class here since will be a href/hyperlink ref.-->
+      <div class="project-details">
+        <img src="" class="image" alt="">
+
+        <h2 class="name">--Project Header--</h2>
+
+        <p class="details">
+          --Project description--
+        </p>
+
+        <div class="button-groups">
+          <a href="#" class="button light" id="live-button">See Live</a>
+          <a href="#" class="button transparent" id="github-button">Github Repo.</a>
+        </div>
+      </div>
+
+      <!--The left-hand pane breaking down all programming languages used within this project.-->
+      <div class="coding-language-breakdown">
+
+        <div class="coding-lang-card">
+          <div class="language">
+            <img src="/Icons/HTML5.png" class="icon" alt="">
+            <p class="name">HTML</p>
+          </div>
+          <div class="progress-track" data-name="html">
+            <div class="progress"></div>
+          </div>
+        </div>
+
+        <div class="coding-lang-card">
+          <div class="language">
+            <img src="/Icons/CSS.png" class="icon" alt="">
+            <p class="name">CSS</p>
+          </div>
+          <div class="progress-track" data-name="css">
+            <div class="progress"></div>
+          </div>
+        </div>
+
+        <div class="coding-lang-card">
+          <div class="language">
+            <img src="/Icons/JS.png" class="icon" alt="">
+            <p class="name">JavaScript</p>
+          </div>
+          <div class="progress-track" data-name="javascript">
+            <div class="progress"></div>
+          </div>
+        </div>
+
+        <div class="coding-lang-card">
+          <div class="language">
+            <img src="/Icons/NodeJS.png" class="icon" alt="">
+            <p class="name">NodeJS</p>
+          </div>
+          <div class="progress-track" data-name="nodejs">
+            <div class="progress"></div>
+          </div>
+        </div>
+
+        <div class="coding-lang-card">
+          <div class="language">
+            <img src="/Icons/CSharp.png" class="icon" alt="">
+            <p class="name">C#</p>
+          </div>
+          <div class="progress-track" data-name="csharp">
+            <div class="progress"></div>
+          </div>
+        </div>
+
+        <div class="coding-lang-card">
+          <div class="language">
+            <img src="/Icons/CPlusPlus.png" class="icon" alt="">
+            <p class="name">C++</p>
+          </div>
+          <div class="progress-track" data-name="cplusplus">
+            <div class="progress"></div>
+          </div>
+        </div>
+
+        <div class="coding-lang-card">
+          <div class="language">
+            <img src="/Icons/C.png" class="icon" alt="">
+            <p class="name">C</p>
+          </div>
+          <div class="progress-track" data-name="c">
+            <div class="progress"></div>
+          </div>
+        </div>
+
+        <div class="coding-lang-card">
+          <div class="language">
+            <img src="/Icons/Java.png" class="icon" alt="">
+            <p class="name">Java</p>
+          </div>
+          <div class="progress-track" data-name="java">
+            <div class="progress"></div>
+          </div>
+        </div>
+
+        <div class="coding-lang-card">
+          <div class="language">
+            <img src="/Icons/Python.png" class="icon" alt="">
+            <p class="name">Python</p>
+          </div>
+          <div class="progress-track" data-name="python">
+            <div class="progress"></div>
+          </div>
+        </div>
+
+        <div class="coding-lang-card">
+          <div class="language">
+            <img src="/Icons/Other.png" class="icon" alt="">
+            <p class="name">Other</p>
+          </div>
+          <div class="progress-track" data-name="other">
+            <div class="progress"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+  
+  <!--About Me Section-->
+  <section id="about-section">
+
+    <h1 class="section-title" faded-text="Cool Stuff">About Me</h1>
+
+    <p class="section-info">My Skills, Experience, and Education</p>
+
+    <div class="about-me-container">
+
+      <div class="about-image-container" id="about-image-box">
+        <!-- *** ARCHIVED DOUBLE-PULSE EFFECT ***
+        <div class="hex-pulse">
+        </div>
+        -->
+        <div class="hex-scanlines">
+          <span style="--outlineItemIndex:0;"></span>
+          <span style="--outlineItemIndex:1;"></span>
+          <span style="--outlineItemIndex:2;"></span>
+          <span style="--outlineItemIndex:3;"></span>
+          <span style="--outlineItemIndex:4;"></span>
+          <span style="--outlineItemIndex:5;"></span>
+          <span style="--outlineItemIndex:6;"></span>
+          <span style="--outlineItemIndex:7;"></span>
+        </div>
+        <img src="Images/AboutMePhoto_PNG.png" class="about-image" alt="Picture of Brendan Sting">
+        <a href="Resume/Brendan_Sting_Resume_Redacted.pdf" class="button light download-button" id="resume-downloader" download="Brendan_Sting_Resume_Preview.pdf">Download Resume</a>
+      </div>
+
+      <div class="personal-info">
+        <h2 class="title">Personal Info</h2>
+
+        <p><span>Name: </span>Brendan Sting</p>
+        <p><span>Age: </span>21 years</p>
+        <p><span>Gender: </span>Male (He/Him)</p>
+        <p class="about-excerpt">By now, you already know my name, but 
+        what you probably don't know is that I love bowling, skeet shooting, making video games,
+        and even building PC's with my dad! Heck, I even have a 1983 Compaq Portable
+        computer that I am still repairing; trust me when I say that removing old arrays of RAM chips is hard work!
+        <br><br>To give a rundown on my path in life, I grew up in the humble state of Michigan
+        where generally I would spend my days bike-riding, bowling, and playing games with my family. 
+        Later on in high school, I took an intro to computer science course with Python and Alice
+        which made me instantly fall in love with programming. Coding granted me the ablility to create
+        digital landscapes and handle computer data to make whatever my imagination desired...
+        which usually ended up being video games. After high school, I went to Kettering University
+        to try and amp up my career, both as a software developer and as a game developer, using their
+        famous co-op program. I got a little spooked when a lot of my peers dropped out of the gaming
+        concentration that I was in due to its intensity, but I had faith that my hardwork, dedication, and passion would
+        get me through. <br><br>Currently, I'm in my senior year at Kettering, still holding that CS gaming 
+        concentration title with pride! Additionally, I've had the pleasure of working at Nexteer Automotive 
+        where I studied multidisciplinary software development in manufacturing and production
+        environments, which now I utilize to lead the development of enterprise software tools for Nexteer's
+        EPS Core Mechanical CAE team!</p>
+        
+        <p><span>Connect with me!</span></p>
+
+        <div class="social-links-container">
+          <!--See this forum for using your own icons instead of Font Awesome: https://stackoverflow.com/questions/38307278/adding-custom-icon-to-html-page-->
+          <a href="https://github.com/Bsting118" class="social-links"><i class="fa-brands fa-github-alt"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100009179453464" class="social-links"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://discordapp.com/users/335462384799842314" class="social-links"><i class="fa-brands fa-discord"></i></a>
+          <a href="https://www.youtube.com/channel/UCAWlcmSuDn5kIqJJf5AGiCQ" class="social-links"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <!--Skills Sub-Section-->
+    <div class="skills">
+      <h2 class="title">Skills</h2>
+
+      <div class="skills-container">
+
+        <div class="skill-card">
+          <img src="/Images/U_ProfileIcon_Alpha_Negative_500x500.png" class="skill-image" alt="">
+          <p class="skill-name">Unity/Unity XR-IT</p>
+        </div>
+        <div class="skill-card">
+          <img src="/Images/Unity_ShaderGraph.png" class="skill-image" alt="">
+          <p class="skill-name">Shader Graph</p>
+        </div>
+        <div class="skill-card">
+          <img src="/Icons/CSharp.png" class="skill-image" alt="">
+          <p class="skill-name">C#</p>
+        </div>
+        <div class="skill-card">
+          <img src="/Icons/C.png" class="skill-image" alt="">
+          <p class="skill-name">C</p>
+        </div>
+        <div class="skill-card">
+          <img src="/Icons/Python.png" class="skill-image" alt="">
+          <p class="skill-name">Python</p>
+        </div>
+        <div class="skill-card">
+          <img src="/Icons/Java.png" class="skill-image" alt="">
+          <p class="skill-name">Java</p>
+        </div>
+        <div class="skill-card">
+          <img src="/Icons/JS.png" class="skill-image" alt="">
+          <p class="skill-name">JavaScript</p>
+        </div>
+        <div class="skill-card">
+          <img src="/Icons/HTML5.png" class="skill-image" alt="">
+          <p class="skill-name">HTML</p>
+        </div>
+        <div class="skill-card">
+          <img src="/Icons/CSS.png" class="skill-image" alt="">
+          <p class="skill-name">CSS</p>
+        </div>
+        <div class="skill-card">
+          <img src="/Icons/github-desktop.512x512.png" class="skill-image" alt="">
+          <p class="skill-name">Git/GitHub</p>
+        </div>
+        <div class="skill-card">
+          <img src="/Icons/file-type-vba.512x286.png" class="skill-image" alt="">
+          <p class="skill-name">Excel-VBA</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!--Education and Experience Sub-Section-->
+    <div class="education-experience">
+      <h2 class="title">Education / Experience</h2>
+
+      <div class="education-experience-container">
+        <div class="education-card">
+          <i class="fa-solid fa-user-graduate fa-lg card-icon"></i>
+          
+          <span class="time">2016 - 2020</span>
+          <h3 class="card-title">High School Diploma | <span>Grand Blanc High School</span></h3>
+          <p class="card-info">GPA: 4.01</p>
+        </div>
+        <div class="education-card">
+          <i class="fa-solid fa-user-graduate fa-lg card-icon"></i>
+          
+          <span class="time">2020 - Current</span>
+          <h3 class="card-title">Bachelor of Science in Computer Science | <span>Kettering University</span></h3>
+          <p class="card-info">GPA: 3.92</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!--Contact Section-->
+  <section id="contact-section">
+    <h1 class="section-title" faded-text="Let's Get In">Contact</h1>
+    <p class="section-info">Please, use this form or visit me on LinkedIn to shoot me a message!</p>
+
+    <div class="contact-container">
+      <div class="contact-details">
+  
+        <div class="contact-card">
+          <i class="fa-solid fa-comment fa-lg"></i>
+          <span class="card-title">Contact me through:</span>
+          <div class="button-groups">
+            <a href="https://www.linkedin.com/in/brendan-sting-0019a61b7/" class="button transparent">LinkedIn</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!--Contact Form-->
+      <div class="contact-form">
+        <form action="https://formspree.io/f/xpzgevnv" method="POST">
+          <div class="name-email-input">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+          </div>
+          <input type="text" placeholder="Subject">
+          <textarea name="message" placeholder="Message"></textarea>
+          <button class="button light" type="submit">SUBMIT</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!--Credit Footer-->
+  <p class="credit">Website design aided by Chat-GPT 3.5 and Kunaal from Modern Web. Website implementation and Three.js JSON models done by Brendan Sting.</p>
+
+  <!--Script to include Three.js JavaScript functionality in this web page-->
+  <script type='module' src="./script.js"></script>
+
+  <!--Misc. JavaScript modules to add functionality to certain CSS elements-->
+  <script src="./projects.js"></script>
+  <script src="./experiences.js"></script>
+  <script src="./app.js"></script>
+  <script src="https://kit.fontawesome.com/a4741ab2b3.js" crossorigin="anonymous"></script>
+  
+</body>
+</html>
