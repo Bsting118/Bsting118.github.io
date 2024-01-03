@@ -1,0 +1,1423 @@
+/*================================================================================================
+  CSS Stylesheet for customizing website appearance - Brendan Sting's bee portfolio website
+  File: style.css
+  Made by: Brendan Sting
+  CSS base stylings & sample code provided by: Kunaal from Modern Web
+  Last revision date: 12-26-2023
+==================================================================================================*/
+
+* {
+  font-family:'Eastman Bold Balanced','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+@font-face {
+  font-family: 'Eastman Bold Balanced';
+  src: url(/Eastman_Font_MyWebLicense/Eastman-Roman-Bold-39540/Fonts/Otf/Eastman-Roman-Bold.otf) format('opentype'),
+       url(/Eastman_Font_MyWebLicense/Eastman-Roman-Bold-39540/Fonts/Ttf/Eastman-Roman-Bold.ttf) format('truetype'),
+       url(/Eastman_Font_MyWebLicense/Eastman-Roman-Bold-39540/Fonts/Woff2/Eastman-Roman-Bold.woff2) format('woff2'),
+       url(/Eastman_Font_MyWebLicense/Eastman-Roman-Bold-39540/Fonts/Woff/Eastman-Roman-Bold.woff) format('woff');
+
+}
+
+/* Basic HTML tag stylings: */
+html 
+{
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body 
+{
+    margin: 0;
+    /*overflow: auto;*/ /*Used to be hidden, but adding custom scrollbar*/
+    overflow-x: hidden; /*Scrollbar will be vertically ONLY, though! */
+    background: #171723;
+}
+
+div 
+{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+h1 
+{
+  color: white;
+  font-size: 100px;
+}
+
+h2 
+{
+  color: white;
+  font-size: 50px;
+}
+
+h3 
+{
+  color: white;
+  font-size: 33px;
+}
+
+a 
+{
+  color: hsl(54, 92%, 65%);
+}
+
+a:visited 
+{
+  color: hsl(54, 92%, 65%);
+}
+
+a:hover 
+{
+  color: hsl(54, 65%, 52%);
+}
+
+a:active 
+{
+  color: hsl(182, 90%, 79%);
+}
+
+a.links 
+{
+  color: #fff;
+}
+
+nav 
+{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  z-index: 9;
+  transition: 0.5s;
+}
+
+nav.bg 
+{
+  background-color: #171723;
+}
+
+.logo 
+{
+  height: 60px;
+  transition: 0.25s;
+}
+
+.logo:hover
+{
+  transform: scale(1.25) perspective(25rem);
+  transition: 0.25s;
+}
+
+section 
+{
+  padding: 60px 10vw;
+}
+
+input, textarea
+{
+  width: 100%;
+  padding: 20px;
+  background: hsl(246, 18%, 20%);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+textarea
+{
+  font-family:'Eastman Bold Balanced','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  resize: none;
+  height: 300px;
+}
+
+/* End of basic HTML tag stylings. */
+  
+.scene 
+{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Added Z-index to CSS background and scene text to prevent undesired "object-over-text"*/
+}
+
+/* Three.js-related stylings: */
+#bee 
+{
+    width: 50px;
+    height: 50px;
+    background-image: url('Bee_Ai.png'); /* Replace 'bee.png' with your bee image */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#frontPage-render 
+{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* End of Three.js-related stylings: */
+
+/* Misc. web-page stylings (classes, not tag stylings): */
+.filter
+{
+  position: relative;
+  margin: 75px 0px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 70px;
+}
+
+.filter-button
+{
+  padding: 15px 30px;
+  font-size: 1rem;
+  border: none;
+  color: #fff;
+  background: transparent;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.filter-button.selected
+{
+  color: #000;
+  background: #fff;
+  padding: 1rem 1rem;
+}
+
+.filter-button:hover
+{
+  color: #000;
+  background: #fff;
+  /*Enlarge the background, larger than it would be selected, using the text size: */
+  transform: scale(1.25) perspective(25rem);
+  transition: 0.25s;
+}
+
+.button 
+{
+  padding: 15px 30px;
+  width: fit-content;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  text-transform: capitalize;
+  display: block;
+  margin: auto;
+}
+
+.button.light 
+{
+  background: #fff;
+  color: #171723;
+  border: 2px solid #fff;
+  transition: 0.5s;
+}
+
+.button.light:visited
+{
+  color: #171723;
+}
+
+.button.light:hover 
+{
+  color: hsl(54, 92%, 65%);
+  background: transparent;
+  border: 2px solid hsl(54, 92%, 65%);
+  transition: 0.35s;
+}
+
+.button.transparent
+{
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.button.transparent:visited
+{
+  color: #fff;
+}
+
+.button.transparent:hover 
+{
+  color: #171723;
+  background: hsl(54, 92%, 65%);
+  border: 2px solid hsl(54, 92%, 65%);
+  transition: 0.35s;
+}
+
+.button-groups
+{
+  position: inherit;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: inherit;
+  justify-content: start;
+  gap: 20px;
+}
+
+.button-groups .button
+{
+  margin: 0;
+}
+
+.coding-language-breakdown
+{
+  position: inherit;
+}
+
+.coding-lang-card
+{
+  position: inherit;
+  margin-bottom: 10px;
+}
+
+.language
+{
+  position: inherit;
+  /*display: inline-block;*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: start;
+  justify-content: start;
+  gap: 10px;
+}
+
+.icon 
+{
+  width: 30px;
+  height: 30px;
+  /*vertical-align: middle;*/
+}
+
+.language .name 
+{
+  font-size: 1rem;
+  margin: 0;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.progress-track
+{
+  position: inherit;
+  width: 100%;
+  margin: 20px 0 30px;
+  height: 5px;
+  border-radius: 10px;
+  background: hsl(246, 18%, 20%);
+  overflow: hidden; 
+}
+
+.progress
+{
+  position: inherit;
+  transition: 1s;
+  width: 50%;
+  background: #fff;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.overlay-content 
+{
+  text-align: center;
+  position: relative;
+}
+
+.overlay-lighten 
+{
+  opacity: 0.3;
+}
+
+/* If wish to darken the image */
+.overlay-darken 
+{
+  filter: brightness(50%);
+  z-index: -1;
+}
+
+.overlay-text 
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.links-container 
+{
+  display: flex;
+  list-style: none;
+  gap: 10 px;
+}
+
+.links 
+{
+  color: #fff;
+  text-decoration: none;
+  text-transform: capitalize;
+  padding: 10px 20px;
+  font-size: large;
+  transition: 0.5s;
+}
+
+.links:hover 
+{
+  opacity: 0.5;
+}
+
+.section-title 
+{
+  text-align: center;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  position: relative;
+}
+
+/*Before psuedo-element (indicated by :: in CSS6) that renders styled content BEFORE section-title's class content */
+.section-title::before
+{
+  content: attr(faded-text);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  font-size: 6rem;
+  font-weight: 900;
+  opacity: 0.1;
+  z-index: -1; /*<-- Put at the very bottom (index-wise) of overlaid elements*/
+}
+
+.section-info
+{
+  text-align: center;
+  width: 50%;
+  min-width: 300px;
+  color: #fff;
+  opacity: 0.5;
+  margin: 3.5rem auto;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+.project-gallery
+{
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.project-card
+{
+  position: relative;
+  height: 200px;
+  z-index: 2;
+}
+
+.project-image
+{
+  width: 60%;
+  height: 100%;
+  object-fit: scale-down;
+  transition: 0.5s;
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+}
+
+.tags
+{
+  position: absolute;
+  left: 10px;
+  bottom: 50%;
+  color: #fff;
+  width: 90%;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+/*Any project card that is not selected ("active") can be shaded over when hovered: */
+.project-card:hover:not(.active) .tags
+{
+  opacity: 1;
+}
+
+.project-card:hover:not(.active) .project-image
+{
+  opacity: 0.4;
+}
+
+/*The project card that IS selected ("active"), make a nice outline for highlighted selection: */
+@keyframes animate
+{
+  0%
+  {
+    transform: rotate(0deg);
+  }
+  100%
+  {
+    transform: rotate(360deg);
+  }
+}
+
+.hex-box
+{
+  position: relative;
+  height: 250px;
+  width: 250px;
+  background: #171723;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+  /* This is what makes the hexagon: */
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+}
+
+/*Only if this project card div box is selected/active can it highlight the project card:*/
+.hex-box.active::after
+{
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: conic-gradient(transparent, transparent, transparent, #ffe600);
+  animation: animate 4s linear infinite;
+  animation-delay: -6s;
+}
+
+.hex-box.active::before
+{
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: conic-gradient(transparent, transparent, transparent, #ffe600);
+  animation: animate 4s linear infinite;
+}
+
+.hex-box span:not(.tags)
+{
+  position: absolute;
+  inset: 5px;
+  /* This is what makes the hexagon: */
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+  border-radius: 16px;
+  background:#171723;
+  z-index: 1;
+}
+
+/* Project Info */
+
+#project-info 
+{
+  margin-top: 100px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.project-details
+{
+  position: inherit;
+  overflow: hidden; 
+}
+
+.image 
+{
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+
+.name
+{
+  color: #fff;
+  margin: 30px 0;
+  font-weight: 300;
+  font-size: 2rem;
+  text-transform: capitalize;
+  text-align: start;
+}
+
+.details 
+{
+  color: #fff;
+  opacity: 0.5;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  margin-bottom: 40px;
+  text-align: start;
+}
+
+/* About Section */
+
+.about-me-container
+{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  position: relative;
+}
+
+.about-image-container
+{
+  width: 40%;
+  height: 50%;
+  position: relative;
+  aspect-ratio: 1/1;
+}
+
+.about-image
+{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  /* This is what makes the hexagon: */
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+}
+
+.download-button
+{
+  position: absolute;
+  bottom: 2.4em;
+  left: 50%;
+  transform: translate(-50%, 50%); 
+}
+
+/* ################### TODO ################### */
+/* (Element must be filled when using CSS' 
+    built-in border properties. To workaround,
+    follow this tutorial where we'll use
+    overlaid inset shapes to "simulate" a 
+    border: 
+    https://www.freecodecamp.org/news/apply-borders-to-clip-paths-with-css/
+*/
+
+/* ================= HEX DOUBLE PULSE EFFECT - WORKING BUT ARCHIVED ================= */
+.hex-pulse
+{
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.hex-pulse::before, .hex-pulse::after
+{
+  content: '';
+  display: block;
+  position: absolute;
+  border: 4em solid #ffe600;
+  background: #ffe600;
+  left: -0.5em;
+  right: -0.5em;
+  top: -0.5em;
+  bottom: -0.5em;
+  animation: pulsate 2s ease-out infinite;
+  opacity: 0;
+  backface-visibility: hidden;
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+}
+
+.hex-pulse::after
+{
+  animation-delay: 0.5s;
+}
+
+@keyframes pulsate 
+{
+  0%
+  {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% 
+  {
+    opacity: 1;
+  }
+  100%
+  {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+}
+
+/* ================= HEX DOUBLE PULSE EFFECT - END OF EFFECT'S SET ================= */
+
+/* ================= HEX SCANLINES EFFECT =================*/
+.hex-scanlines
+{
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  backface-visibility: hidden;
+}
+
+.hex-scanlines span
+{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #ffe600;
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+  backface-visibility: inherit;
+  animation: ripple 8s linear calc(1s * var(--outlineItemIndex)) infinite;   /* For consistency, keep seconds = number of spans*/
+}
+
+.hex-scanlines span:nth-child(even)
+{
+  background: #171723;
+}
+
+.hex-scanlines span:nth-child(1)
+{
+  opacity: 1;
+}
+
+@keyframes ripple
+{
+  100%
+  {
+    opacity: 0%;
+    transform: scale(1.3);
+  }
+}
+/* ================= HEX SCANLINES EFFECT - END OF EFFECT'S SET ================= */
+
+.personal-info
+{
+  color: #fff;
+  text-align: start;
+  position: relative;
+}
+
+.title 
+{
+  text-align: center;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.personal-info .title 
+{
+  text-align: start;
+}
+
+.personal-info p
+{
+  margin: 30px 0;
+  font-size: 1.1rem;
+  opacity: 0.5;
+}
+
+.personal-info p span 
+{
+  /*opacity: 0.5;*/
+  opacity: 0.5 !important;
+}
+
+.about-span
+{
+  opacity: 1;
+}
+
+.about-excerpt
+{
+  line-height: 1.4rem;
+  font-size: 1.1rem;
+}
+
+.social-links-container
+{
+  position: relative;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.social-links
+{
+  color: #fff;
+  font-size: 2rem;
+  margin-right: 20px;
+  transition: 0.25s;
+}
+.social-links:visited
+{
+  color:#fff
+}
+
+.social-links:hover
+{
+  color: hsl(54, 92%, 65%);
+  transform: scale(1.25);
+  transition: 0.25s;
+}
+
+/* Skills Section */
+
+.skills 
+{
+  position: relative;
+  margin: 100px 0;
+}
+
+.skills-container 
+{
+  position: relative;
+  margin: 100px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.skill-card
+{
+  width: 150px;
+  height: 200px;
+  background:hsl(246, 18%, 20%);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.skill-image
+{
+  width: 100px;
+  height: 100px;
+  object-fit: scale-down;
+  display: block;
+  margin: auto;
+  padding-bottom: 50px;
+  transition: 0.5s;
+}
+
+.skill-name
+{
+  position: absolute;
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 35px;
+  padding-bottom: 25px;
+  width: 100%;
+  transition: 0.5s;
+  border-top: 5px solid #171723;
+}
+
+.skill-card::after, .skill-card::before 
+{
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #171723;
+  z-index: 2;
+  transform: rotate(45deg);
+}
+
+.skill-card::before
+{
+  bottom: -20px;
+  left: -20px;
+}
+
+.skill-card::after
+{
+  bottom: -20px;
+  right: -20px;
+}
+
+.skill-card:hover
+{
+  background: #171723;
+}
+
+/*Hover color for Unity skill card*/
+.skill-card:nth-child(1):hover .skill-name
+{
+  background: #bbbbbb;
+}
+
+/*Hover color for Unity Shader Graph skill card*/
+.skill-card:nth-child(2):hover .skill-name
+{
+  background: #fd7575;
+  
+}
+
+/*Hover color for C# skill card*/
+.skill-card:nth-child(3):hover .skill-name
+{
+  background: #9627b8;
+}
+
+/*Hover color for C skill card*/
+.skill-card:nth-child(4):hover .skill-name
+{
+  background: #517fb4;
+}
+
+/*Hover color for Python skill card*/
+.skill-card:nth-child(5):hover .skill-name
+{
+  background: #a7e9e3;
+}
+
+/*Hover color for Java skill card*/
+.skill-card:nth-child(6):hover .skill-name
+{
+  background: #d68534;
+}
+
+/*Hover color for JavaScript skill card*/
+.skill-card:nth-child(7):hover .skill-name
+{
+  background: #d3bc54;
+}
+
+/*Hover color for HTML skill card*/
+.skill-card:nth-child(8):hover .skill-name
+{
+  background: #f16d2f;
+}
+
+/*Hover color for CSS skill card*/
+.skill-card:nth-child(9):hover .skill-name
+{
+  background: #4cafd6;
+}
+
+/*Hover color for Git/GitHub skill card*/
+.skill-card:nth-child(10):hover .skill-name
+{
+  background: #7537c7;
+}
+
+/*Hover color for Excel-VBA skill card*/
+.skill-card:nth-child(11):hover .skill-name
+{
+  background: #1e7022;
+}
+
+.skill-card:hover .skill-image
+{
+  transform: scale(1.1) translateY(-10px);
+}
+
+/* Education and Experience Section */
+
+.education-experience 
+{
+  position: relative;
+}
+
+.education-experience-container
+{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  position: relative;
+  gap: 60px;
+  margin-top: 100px;
+}
+
+.experience-card, .education-card
+{
+  padding-top: 15px;
+  position: relative;
+  color: #fff;
+  padding-left: 60px;
+  margin-bottom: 50px;
+  align-self: start;
+}
+
+.card-icon.fa-solid
+{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: hsl(246, 18%, 20%);
+  color: hsl(54, 92%, 65%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-2.5rem);
+}
+
+.card-icon.exp 
+{
+  transition: 0.5s;
+}
+
+.card-icon.exp:hover
+{
+  cursor: pointer;
+  opacity: 0.5; 
+  transform: translate(-2.5rem, -10px);
+  transition: 0.5s;
+}
+
+.time 
+{
+  padding: 15px 30px;
+  background:hsl(246, 18%, 20%);
+  border-radius: 30px;
+}
+
+.card-title
+{
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: 40px 0 30px;
+}
+
+.card-title span
+{
+  opacity: 0.5;
+}
+
+.card-info
+{
+  line-height: 1.5rem;
+  opacity: 0.5;
+}
+
+/* Contact Section */
+
+.contact-container
+{
+  position: relative;
+  margin-top: 100px;
+  display: flex; 
+  gap: 50px;
+  align-items: center;
+  
+}
+
+.contact-details
+{
+  width: 25%;
+  color: #fff;
+  position: relative;
+  margin-right: 50%;
+}
+
+.contact-card
+{
+  position: relative;
+  padding-top: 10px;
+  margin-bottom: 40px;
+  justify-content: start;
+  text-align: start;
+  flex-wrap: nowrap;
+}
+
+.card-title
+{
+  text-transform: capitalize;
+  opacity: 0.5;
+}
+
+.contact-form
+{
+  position: relative;
+  width: 75%;
+}
+
+.name-email-input
+{
+  position: inherit;
+  display: flex;
+  gap: 20px;
+}
+
+.contact-form .button
+{
+  position: inherit;
+  margin: 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Credits Footer */
+.credit
+{
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  color: #fff;
+  line-height: 1.3rem;
+  background: hsl(246, 18%, 20%);
+  opacity: 0.5;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+/* Media Query Navigation Toggle Button */
+.toggle-button
+{
+  display: none;
+}
+
+/* My Custom Scrollbar */
+
+/*--Chrome, Edge, and Opera support:--*/
+::-webkit-scrollbar
+{
+  width: 1.25em;
+}
+
+/*Track = the background bounds of the scrollbar*/
+/*(HSL - set the Hue, Saturation, and Lightness of a color!)*/
+::-webkit-scrollbar-track 
+{
+  border-radius: 100vw;
+  background: hsl(246, 18%, 20%);
+}
+
+::-webkit-scrollbar-thumb /*Thumb = the bar itself that shows where you are*/
+{
+  border-radius: 100vw;
+  border: .25em solid hsl(246, 18%, 20%);
+  background: hsl(54, 92%, 65%);
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+  background: hsl(54, 92%, 65%);
+}
+/*--Firefox support:--*/
+@supports (scrollbar-color: hsl(54, 92%, 65%) hsl(246, 18%, 20%)) and not(selector(::-webkit-scrollbar))
+{
+  * {
+    scrollbar-color: hsl(54, 92%, 65%) hsl(246, 18%, 20%);
+    scrollbar-width: thin;
+  }
+  
+}
+
+
+/* --- SCREEN WIDTH MEDIA QUERIES --- */
+
+
+/* For screen width less than 1200px: */
+@media screen and (max-width: 1200px)
+{
+  html 
+  {
+    font-size: 15px;
+  }
+
+  /* Reshaping project gallery: */
+  .project-gallery
+  {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .project-card
+  {
+    height: 175px;
+  }
+
+  /* Reshaping Contact Section: */
+  .contact-container
+  {
+    position: relative;
+    flex-direction: column;
+    padding-bottom: 70px;
+    align-items: start;
+  }
+
+  .contact-details
+  {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contact-form
+  {
+    width: 100%;
+  }
+}
+
+/* For screen width less than 992px: */
+@media screen and (max-width: 992px)
+{
+  /* Reshaping front-page render: */
+  .frontPage-headline
+  {
+    font-size: 3.5rem;
+  }
+
+  /* Reshaping Filters: */
+  .filter-button
+  {
+    padding: 10px 15px;
+  }
+
+  /* Reshaping Project Gallery: */
+  .project-gallery
+  {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .project-card
+  {
+    height: 150px;
+  }
+
+  /* Reshaping Project Info: */
+  #project-info
+  {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* Reshaping About Section: */
+  .about-me-container
+  {
+    align-items: center;
+  }
+
+  .personal-info
+  {
+    width: 100%;
+  }
+
+  /* Reshaping Education and Experiences: */
+  .education-experience-container
+  {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-container
+  {
+    align-items: start;
+  }
+
+  .contact-details
+  {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For screen width less than 735px: */
+@media screen and (max-width: 735px)
+{
+  /* Reshaping Navigation Bar: */
+  nav 
+  {
+    background-color:#171723;
+  }
+
+  /* Reshaping Navigation Display which will now be triggered via a toggle button: */
+  .toggle-button
+  {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .toggle-button span 
+  {
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    background: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+  }
+
+  /* Create two more "bars" to make the toggle button's icon from span shapes: */
+  /* (using span shapes to make cool merge transition)*/
+  .toggle-button span:nth-child(1)
+  {
+    top: 30%;
+  }
+
+  .toggle-button span:nth-child(3)
+  {
+    top: 70%;
+  }
+
+  /*When toggle button is activated, it turns into an 'X' by translated rotation:*/
+  .toggle-button.active span:nth-child(1) 
+  {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .toggle-button.active span:nth-child(3) 
+  {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  /*Remove the middle bar in toggle button to only leave the two 'X' lines:*/
+  .toggle-button.active span:nth-child(2) 
+  {
+    opacity: 0;
+  }
+
+  /* Reshaping Links with Toggle Button Trigger: */
+  .links-container
+  {
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    left: 0;
+    gap: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  .links-container.active 
+  {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .links
+  {
+    display: block;
+    width: 100%;
+    padding: 20px 10vw;
+    background: #171723;
+  }
+
+  .links:hover 
+  {
+    opacity: 1;
+    background:hsl(246, 18%, 20%);
+  }
+
+  /* Reshaping project section: */
+  .project-gallery
+  {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Reshaping skills section: */
+  .skill-card
+  {
+    width: 120px;
+    height: 190px;
+    padding: 10px 0;
+  }
+
+  .skill-image
+  {
+    width: 70px;
+    object-fit: contain;
+  }
+
+  .skill-name
+  {
+    font-size: 1rem;
+  }
+
+  /* Reshaping contact section: */
+  .contact-details 
+  {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+}
+
+/* For screen width less than 500px: */
+@media screen and (max-width: 500px)
+{
+  /* Reshaping front-page render: */
+  .frontPage-headline
+  {
+    font-size: 3rem;
+  }
+
+  .frontPage-secondary-line
+  {
+    font-size: 2rem;
+  }
+
+  .frontPage-third-line
+  {
+    font-size: 1.5rem;
+    width: 80%;
+    display: block;
+    margin: 25px auto 50px;
+    line-height: 2rem;
+  }
+
+  /* Reshaping project gallery section: */
+  .project-gallery
+  {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Reshaping contact section:*/
+  .name-email-input
+  {
+    flex-direction: column;
+  }
+
+  input:nth-child(1)
+  {
+    margin-bottom: 0;
+  }
+}
+
+/* --- END OF SCREEN WIDTH MEDIA QUERIES --- */
