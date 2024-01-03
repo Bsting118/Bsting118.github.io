@@ -22,7 +22,7 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 --------------------------------------------------------------------------------------------------*/
 
-import {
+/*import {
     ShaderMaterial,
     Clock,
     Uniform,
@@ -33,6 +33,19 @@ import {
     BackSide,
     DoubleSide,
   } from "three";
+*/
+
+import {
+  ShaderMaterial,
+  Clock,
+  Uniform,
+  Color,
+  NormalBlending,
+  AdditiveBlending,
+  FrontSide,
+  BackSide,
+  DoubleSide,
+} from "./node_modules/three";
   
   class HolographicMaterial extends ShaderMaterial {
     /**

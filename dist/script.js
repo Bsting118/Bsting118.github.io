@@ -15,7 +15,7 @@ const redHoloMaterial = new HolographicMaterial({hologramColor: '#ed3434', depth
 const blueHoloMaterial = new HolographicMaterial({hologramColor: '#0394fc', depthTest: true, enableBlinking: false, side:THREE.DoubleSide});
 
 // Import any GLSL loaders for the shaders on-hand:
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { GLTFLoader } from './node_modules/three/examples/jsm/loaders/GLTFLoader.js';
 
 // Prep the elements to be initialized inside our function workspaces:
 let scene, camera, renderer, beeObj, lampObj, redHoloLampObj, blueHoloLampObj;
