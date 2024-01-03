@@ -6,7 +6,8 @@
     Last revision date: 1-2-2024
 ====================================================================================*/
 
-import * as THREE from 'three';
+//import * as THREE from 'three';
+import * as THREE from './node_modules/three';
 
 // Import any shaders:
 import HolographicMaterial from './HologramGLSLShader';
