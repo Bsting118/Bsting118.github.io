@@ -45,7 +45,7 @@ copies or substantial portions of the Software.
     FrontSide,
     BackSide,
     DoubleSide,
-  } from "./node_modules/three";
+  } from "./three";
   
   class HolographicMaterial extends ShaderMaterial {
     /**
