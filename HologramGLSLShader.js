@@ -45,7 +45,7 @@ import {
   FrontSide,
   BackSide,
   DoubleSide,
-} from "./node_modules/three";
+} from "./three";
   
   class HolographicMaterial extends ShaderMaterial {
     /**
