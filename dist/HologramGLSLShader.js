@@ -45,7 +45,7 @@ import {
   FrontSide,
   BackSide,
   DoubleSide,
-} from "./three";
+} from "https://unpkg.com/three@0.154.0/build/three.module.js";
   
   class HolographicMaterial extends ShaderMaterial {
     /**

@@ -7,8 +7,8 @@
 ====================================================================================*/
 
 //import * as THREE from 'three';
+import * as THREE from 'https://unpkg.com/three@0.154.0/build/three.module.js';
 //import * as THREE from './node_modules/three';
-import * as THREE from './three';
 
 // Import any shaders:
 //import HolographicMaterial from './HologramGLSLShader';
@@ -18,8 +18,9 @@ const redHoloMaterial = new HolographicMaterial({hologramColor: '#ed3434', depth
 const blueHoloMaterial = new HolographicMaterial({hologramColor: '#0394fc', depthTest: true, enableBlinking: false, side:THREE.DoubleSide});
 
 // Import any GLSL loaders for the shaders on-hand:
-// import { GLTFLoader } from './node_modules/three/examples/jsm/loaders/GLTFLoader.js';
-import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js';
+//import { GLTFLoader } from './node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+// For GitHub pages, use Three.js revision 127 due to import header in GLTFLoader.js file being latest relative-PATH based:
+import { GLTFLoader } from 'https://unpkg.com/three@0.127.0/examples/jsm/loaders/GLTFLoader.js';
 
 // Prep the elements to be initialized inside our function workspaces:
 let scene, camera, renderer, beeObj, lampObj, redHoloLampObj, blueHoloLampObj;
@@ -222,4 +223,5 @@ function applyRotationalDrag(speed, dragAmt, objectUsedToScale)
 }
 
 // Initialize the 3D scene
+console.log(THREE.REVISION);
 init();
