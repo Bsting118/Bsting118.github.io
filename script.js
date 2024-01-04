@@ -7,8 +7,8 @@
 ====================================================================================*/
 
 //import * as THREE from 'three';
-//import * as THREE from './node_modules/three';
 import * as THREE from 'https://unpkg.com/three@0.154.0/build/three.module.js';
+//import * as THREE from './node_modules/three';
 
 // Import any shaders:
 //import HolographicMaterial from './HologramGLSLShader';
@@ -35,6 +35,12 @@ const canvas = document.querySelector('canvas.WEBGL_BCKGRND');
 const hemiLight = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 ); //a no-shadow gradient light
 const ambLight = new THREE.AmbientLight( 0xf7b345, 0.3 ); // soft orange light
 const directionalLight = new THREE.DirectionalLight( 0xf7b345, 0.8 ); // a directional white light, 1/2 intensity
+
+// FPS-related variables for controlling animation progression:
+const fps_limit = 120;
+const frameLengthInterval_ms = 1000 / (fps_limit);
+var endpointFromLastTime;
+var deltaTime;
 
 const renderedSection = document.querySelector('#frontPage-render');
 
@@ -189,13 +195,53 @@ function init() {
   animate();
 }
 
+//###############################################################################################################################
+// === BUG FIX: CAP FPS AT 120 FPS TO PREVENT "...the animation [from running] faster on high refresh-rate screens..." ===
+// === SEE https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame FOR INFO ===
+//###############################################################################################################################
 // Render or animate loop function, just like a game Update() loop:
-function animate() {
+function animate(atTimeFrame) 
+{
+  // If our last endpoint in time has not changed, then update it to current time:
+  if (!endpointFromLastTime)
+  {
+    endpointFromLastTime = atTimeFrame;
+  }
+
+  // Request to animate a frame and capture its frame length to see if it exceeded the frame interval limit based on FPS:
   requestAnimationFrame(animate);
+  deltaTime = atTimeFrame - endpointFromLastTime;
+
+  // If we passed the interval, then reset endpoint:
+  if (deltaTime > frameLengthInterval_ms)
+  {
+    // Update time stuff
+    endpointFromLastTime = atTimeFrame - (deltaTime % frameLengthInterval_ms);
+
+    // Try drawing stuff here instead:
+    if (beeObj)
+    {
+      // Rotate the bee top-down (Y-axis rotation)
+      let baseSpeed = applyRotationalDrag(1, 0.15, canvas);
+
+      beeObj.rotation.y += baseSpeed;
+    }
+
+    renderer.render(scene, camera);
+
+    if (lastHoloState == "red")
+    {
+      redHoloMaterial.update();
+    }
+    else if (lastHoloState == "blue")
+    {
+      blueHoloMaterial.update();
+    }
+  }
 
   // Wrap it in a defined if-statement to stop the program from complaining at the start about not being able to access the property of a non-existing object
   // (For more info, see: https://discourse.threejs.org/t/cannot-read-property-rotation-of-undefined/24193)
-  if (beeObj)
+  /*if (beeObj)
   {
     // Rotate the bee top-down (Y-axis rotation)
     let baseSpeed = applyRotationalDrag(1, 0.15, canvas);
@@ -213,7 +259,7 @@ function animate() {
   {
     blueHoloMaterial.update();
   }
-  
+  */
 }
 
 function applyRotationalDrag(speed, dragAmt, objectUsedToScale)
@@ -225,4 +271,3 @@ function applyRotationalDrag(speed, dragAmt, objectUsedToScale)
 // Initialize the 3D scene
 console.log(THREE.REVISION);
 init();
-
