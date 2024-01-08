@@ -97,7 +97,7 @@ of my HLSL holo-shader I made in Unity\'s Shader Graph. My final hologram GLSL s
 is an edited derivative of Anderson Mancini\'s \"Holographic Material\" shader. Also, special thanks to both \
 Modern Web and Zetafonts for providing the initial website design and Eastman font family, respectively. \
 \n\nTIP: you can preview this shader by clicking on my branded \"Bee-Sting Icon\" at the top!',
-'Front-end/UI', '#frontPage-render', '[GitHub Project link here!]', 
+'Front-end/UI', '#frontPage-render', 'https://github.com/Bsting118/Bsting118.github.io', 
 'Images/website_projectcard_image.png', new ProgrammingLangsPercents('40%', '60%', '65%', '10%', '0%',
 '0%', '0%', '0%', '0%', '0%'), projects);
 
