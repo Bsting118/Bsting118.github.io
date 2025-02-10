@@ -76,8 +76,29 @@ function addListOfClassesFromArray(toElement, fromThisArray)
 
 /*---LIST AND ADD JOB EXPERIENCES HERE TO CREATE MORE CARDS---*/
 
+// Card 6.
+addNewJobExperience("fa-solid fa-folder fa-lg card-icon exp", "Dec 2024 - Current",
+"Junior Game Engineer | ", "Azure Ravens Entertainment LLC", "While under the engineering team at Azure Ravens, \
+I studied the event architecture of Unreal Engine to convert various Unreal Blueprint event graphs into C++ parent script components. \
+Along the way, I documented a style guide of best practices when converting Azure Ravens\' Blueprints to C++ so that the end-product scripts \
+would have a more consistent functionality and layout to them. Further, I was also able to help debug existing systems through the \
+C++ conversion process by being able to spot holes in certain areas of logic to which I could offer up more programmatic solutions to them. \
+Currently working with the team at Azure Ravens to-date has been a blast, as the studio in Ypsilanti, MI, is a whimiscal yet cozy work environment!", experiences);
+
+// Card 5.
+addNewJobExperience("fa-solid fa-folder fa-lg card-icon exp", "Jan 2024 - Nov 2024",
+"Junior Game Programmer | ", "Miraculum Games", "Contributed to Miraculum's development team with FMOD game audio scripts, \
+state-based C# systems like Dash and ladder-climbing abilities, and custom UI loops, all within the Unity Game Engine. \
+These contributions were made all for Miraculum's newest 2D platformer title, \"Fiadh\", which is still undergoing development. \
+The development of \"Fiadh\" is currently on hold until more investor funding can come in for the game, which is why my time there got cut short. \
+Nonetheless, I still acquired various soft skills with development, such as coordinated merging and code reviews in Unity DevOps Version Control, \
+as well as various mathematical skills such as working with Bezier curves + splines in game development. \
+The designers at Miraculum will also vouch that I was well-known for making LOTS of development documentation in Notion; \
+what can I say, I just like to write down workflows so it\'s easier on the next person that crosses that bridge.  \
+The best part by far was just being able to work in a real game production environment, as it was a dream come true! ", experiences);
+
 // Card 4.
-addNewJobExperience("fa-solid fa-folder fa-lg card-icon exp", "Apr 2021 - Current",
+addNewJobExperience("fa-solid fa-folder fa-lg card-icon exp", "Apr 2021 - Dec 2023",
 "Production - Rotational CS Co-op | ", "Nexteer Automotive", "Programmed and developed enterprise software for EPS CAE \
 Core Mechanical team using Python 3 and Excel VBA. Python was used to implement the Defeature Model application to save \
 hours of manually editing MBD models' parameters. Meanwhile, VBA was used to implement a full Excel macro script that \

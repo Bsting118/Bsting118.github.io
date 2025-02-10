@@ -185,6 +185,21 @@ Also, changing the fill level of the potion liquid shader and seeing the VFX bub
 'Graphics Programming', 'https://youtu.be/UbyRDRH9FnI?si=i6ZkkVEMRbmdiz-F', 'https://github.com/Bsting118/Unity-URP-Shaders',
 'Images/Dynamic_potion_shader_image.png', new ProgrammingLangsPercents('0%', '0%', '0%', '0%', '30%', '0%', '0%', '0%', '0%', '70%'), projects);
 
+// Card 8.
+addNewProject('Slots Simulator Web-App', 'During one of my senior terms at Kettering, I took a CS-471: Software Engineering course where our main project for the class \
+was to develop a piece of software, following a certain architectural design, and scale it along an agile workflow. For the project, I teamed up with three other peers: \
+Soren Zaiser, Zach Freytag, and Joey Dvorscak. We had no initial ideas going into our group\'s project choice, so I led design on working up a fun idea to do a slot-machine game. \
+Really, it was just a series of UI layout sketches I did in my notebook along with some feature lists, but the group really liked the concept and Soren came up with some JS tech-stacks \
+we could leverage to add some user-data and special effects juice to the game, if it were to be a web-app game. We looked over the web-based tech-stack possibilities and settled on using \
+HTML, vanilla CSS, and vanilla JavaScript, but with Google\'s Firebase API being integrated into our app and JavaScript components. This setup was the most lightweight for the group, \
+but also offered easy-access to setup and implement a user-login system to our slot machine game, which would allow us to keep track of slots credits in each user\'s data-entry of our Firebase database. \
+In terms of engineering tasks, I was assigned to make the front-end display(s) of the web-app, along with a version one of an algorithm for the slot machine\'s selective randomness. \
+\n\nAt the conclusion of our CS-471 course, we were very satisfied with the final slots web-app product we made and decided to call it our \"Slots Simulator\". \
+In its final state, it had effects for getting a winning combination, a fully-functional credits system used to play the slot machine, and adjustable pay-tables! \
+You can play and test out our \"Slots Simulator\" from the \'See Live\' button below; just make a temporary account, sign-in, and start gambling artifical credits!', 
+'Front-end/UI, Game Development, Game Design', 'https://slots-web-app-simulator.web.app/', 'https://github.com/Bsting118/SlotsWebApp',
+'Images/Slots_Simulator_cover_image.png', new ProgrammingLangsPercents('45%', '40%', '85%', '15%', '0%', '0%', '0%', '0%', '0%', '10%'), projects);
+
 /*---END OF PROJECT CARDS FOR PORTFOLIO---*/
 
 /* ---Let's make a more code-efficient way of assembling those project cards--- */ 
