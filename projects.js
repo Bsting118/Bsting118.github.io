@@ -3,7 +3,7 @@
     File: projects.js
     Made by: Brendan Sting
     JavaScript map() code provided by: Kunaal from Modern Web
-    Last revision date: 1-2-2024
+    Last revision date: 2-9-2025
 ================================================================================================*/
 
 // Portfolio Project object declaration
