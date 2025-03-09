@@ -200,6 +200,22 @@ You can play and test out our \"Slots Simulator\" from the \'See Live\' button b
 'Front-end/UI, Game Development, Game Design', 'https://slots-web-app-simulator.web.app/', 'https://github.com/Bsting118/SlotsWebApp',
 'Images/Slots_Simulator_cover_image.png', new ProgrammingLangsPercents('45%', '40%', '85%', '15%', '0%', '0%', '0%', '0%', '0%', '10%'), projects);
 
+// Card 9.
+addNewProject('Asteroid Belt', 'For my final term at Kettering University, I enrolled in a CS-485: Advanced Game Development class to fulfill my gaming concentration as part of my BSCS degree. \
+This was to be the most rigorous game development course at Kettering, as each student had to design, develop, and engineer their own game INDEPENDENTLY within the timespan of 11 weeks. \
+\n\nSo, I decided to go with a simple game concept, but one that was scalable in design: a 3D version of the arcade game \"Asteroids\" but playable in first-person AND third-person! \
+I called it, \"Asteroid Belt\" (very creative, I know). After creating a technical report for its design (aka, its \'Game Design Document\'), I immediately set up a GitHub repository \
+for version control of the project, just like my group did in our past CS-420 class (see the \"Pirate XR\" card for more info on that). From there, it was just spinning up a new Unity \
+project in the version control directory and building the game with C#. Sounds easy, but the reality was re-visiting Unity docs and following some YouTube tutorials on how to make \
+a nice set of controls for spaceships in Unity. Least to say I now know a lot more behind the physics and interactions that go into \"yaw\", \"pitch\", and \"roll\" with aircrafts. \
+\n\nLater on, near the end of our allowed development, I was able to engineer how the third-person perspective of the game looked. I decided to take a fun approach which involved \
+developing an outline shader that would make the game look 2D-ish from a top-down view displayed by a \'Cinemachine\' game camera. Sadly, I couldn\'t polish this feature as much \
+as I desired to, but I did get it to work in-game so a win is a win. You can demo this third-person feature by pressing \'Q\' during the main game scene while in play-mode of \
+the project\'s Unity Editor or in a build of the game. The controls in the third-person view still take place in the 3D world, so apologies if it feels weird but I still hope \
+you have fun toying with it! Again, please feel free to visit the GitHub repository to clone and test it out!', 
+'Game Development, Game Design', 'https://youtu.be/GgDH2IdReeQ?si=3iQ9kdu_ABGXS6b1', 'https://github.com/Bsting118/CS485-Project',
+'Images/asteroid_belt_image.png', new ProgrammingLangsPercents('0%', '0%', '0%', '0%', '80%', '0%', '0%', '0%', '0%', '20%'), projects);
+
 /*---END OF PROJECT CARDS FOR PORTFOLIO---*/
 
 /* ---Let's make a more code-efficient way of assembling those project cards--- */ 
