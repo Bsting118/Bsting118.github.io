@@ -117,7 +117,7 @@ addNewProject('Pirate XR', 'One of my classes I took in my Senior I term at Kett
 was \'Introduction to Virtual Reality\'. The only graded item in this class was your VR prototype app; \
 no tests, no quizzes, not even a homework assignment. Hence, it was really vital to do well on the project to pass this \
 class. However, I didn\'t want to just pass this class; I wanted to ace it. In turn, I formed a group of \
-of three classmates for a dev team: myself, Zach Freytag, and Matthew Herber. Together, we would tackle implementing \
+three classmates for a dev team: myself, Zach Freytag, and Matthew Herber. Together, we would tackle implementing \
 a rigorous VR app design concept: a full-fledged first-person Pirate VR game. The plan was that Zach would handle \
 implementing the steering and skybox, Matt would then take on cannon mechanics and target spawning, and I would \
 take care of the game\'s design, VR-UI, shaders, and misc. game assets. There were some tough times where \
