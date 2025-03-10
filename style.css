@@ -890,62 +890,68 @@ textarea
   
 }
 
-/*Hover color for C# skill card*/
+/*Hover color for Unreal Engine skill card*/
 .skill-card:nth-child(3):hover .skill-name
+{
+  background: #050305;
+}
+
+/*Hover color for C# skill card*/
+.skill-card:nth-child(4):hover .skill-name
 {
   background: #9627b8;
 }
 
 /*Hover color for C skill card*/
-.skill-card:nth-child(4):hover .skill-name
+.skill-card:nth-child(5):hover .skill-name
 {
   background: #517fb4;
 }
 
 /*Hover color for C++ skill card*/
-.skill-card:nth-child(5):hover .skill-name
+.skill-card:nth-child(6):hover .skill-name
 {
   background: #6765d2;
 }
 
 /*Hover color for Python skill card*/
-.skill-card:nth-child(6):hover .skill-name
+.skill-card:nth-child(7):hover .skill-name
 {
   background: #a7e9e3;
 }
 
 /*Hover color for Java skill card*/
-.skill-card:nth-child(7):hover .skill-name
+.skill-card:nth-child(8):hover .skill-name
 {
   background: #d68534;
 }
 
 /*Hover color for JavaScript skill card*/
-.skill-card:nth-child(8):hover .skill-name
+.skill-card:nth-child(9):hover .skill-name
 {
   background: #d3bc54;
 }
 
 /*Hover color for HTML skill card*/
-.skill-card:nth-child(9):hover .skill-name
+.skill-card:nth-child(10):hover .skill-name
 {
   background: #f16d2f;
 }
 
 /*Hover color for CSS skill card*/
-.skill-card:nth-child(10):hover .skill-name
+.skill-card:nth-child(11):hover .skill-name
 {
   background: #4cafd6;
 }
 
 /*Hover color for Git/GitHub skill card*/
-.skill-card:nth-child(11):hover .skill-name
+.skill-card:nth-child(12):hover .skill-name
 {
   background: #7537c7;
 }
 
 /*Hover color for Excel-VBA skill card*/
-.skill-card:nth-child(12):hover .skill-name
+.skill-card:nth-child(13):hover .skill-name
 {
   background: #1e7022;
 }
